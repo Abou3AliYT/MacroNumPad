@@ -1,27 +1,31 @@
-# macronumpad_4x6
+# Introduction
 
-![abou3li_4x6_macronumpad](imgur.com image replace me!)
+Before anything, I would like to deeply and kindly thank [ai03](https://ai03.com/), [reuiqimao](https://github.com/ruiqimao), [Joe Scotto](https://www.youtube.com/@joe_scotto), and [masterzen](https://www.masterzen.fr/keyboard/) for providing guides and videos on how you can start a keyboard design process yourself, I will link all of their work in the references section of the Readme. I began with designing the PCB using KiCad EDA, a free and open source software used for circuit design and electrical work. At the beginning I used an ATmega32u4 MCU (Micro Controller Unit :nerd:) for simplicity and ease of access at the time. I will be dumbing down the steps of the design process to Lamin's terms for easier understanding, which are drawing the schematic, wiring the PCB and Fabricating the PCB on JLCPCB.com. 
 
-*A short description of the keyboard/project*
+**NOTE:** If you know everything I offer here, I will provide all of the files related to this project such as the KiCad project, STL file for CAD, QMK/VIA firmware and other stuff that I might have forgotten for your tinkering and learning purposes.
+## Chapter I, Part I - The Schematic
 
-* Keyboard Maintainer: [Abou3li](https://github.com/Abou3li)
-* Hardware Supported: *The PCBs, controllers supported*
-* Hardware Availability: *Links to where you can find this hardware*
+Following the guides provided by the individuals I mentioned earlier, I first made a simple 4x6 switch matrix with each switch getting it's own diode and two of the switches removed to make space for the 128x32 OLED. Each row and column will be using a pin on the ATmega32u4 so we will assign each of them a **global label** for ease of wiring in the MCU schematic, and I wired the OLED according to the pinout shown in the picture below:
 
-Make example for this keyboard (after setting up your build environment):
+![[Screenshot_232.png]]
 
-    make abou3li_4x6_macronumpad:default
+For this part I highly recommend referring to ai03's guide on how to properly wire an ATmega32u4 to it's respective components, but the picture below shows how it is generally meant to be wired. I will also mention that when wiring any MCU, it is also highly recommend to refer to the original data sheet containing the proper information on how and what to wire to the respective MCU. 
 
-Flashing example for this keyboard:
+![[Screenshot_233 1.png]]
+## Part II - The PCB 
 
-    make abou3li_4x6_macronumpad:default:flash
+Here is some of the worst wiring possible for the MCU, here is a picture below:
 
-See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_tools) and the [make instructions](https://docs.qmk.fm/#/getting_started_make_guide) for more information. Brand new to QMK? Start with our [Complete Newbs Guide](https://docs.qmk.fm/#/newbs).
+![[Pasted image 20250604192905.png]]
 
-## Bootloader
+Organization is a very important skill when in comes to wiring the PCB, and when it comes to circuitry involved with MCUs and small components such as this, it requires wiring from, to and back to the original component, meaning that there is an order of components to be wired first with constant consideration of keeping sufficient space for the pinout of all the other components and the MCU pinouts. 
 
-Enter the bootloader in 3 ways:
+![[Screenshot_236.png]]
+## Provided Guides And References
 
-* **Bootmagic reset**: Hold down the key at (0,0) in the matrix (usually the top left key or Escape) and plug in the keyboard
-* **Physical reset button**: Briefly press the button on the back of the PCB - some may have pads you must short instead
-* **Keycode in layout**: Press the key mapped to `QK_BOOT` if it is available
+If you have the time, please check out these guys' GitHubs, YouTube and Websites if you have any interests in keyboard stuff, these people are awesome. 
+
+[ai03's PCB guide](https://wiki.ai03.com/books/pcb-design/page/pcb-guide-part-1---preparations)
+[masterzen's PCB guide](https://www.masterzen.fr/2020/05/03/designing-a-keyboard-part-1/)
+[Ruiqi Mao's PCB guide](https://github.com/ruiqimao/keyboard-pcb-guide) 
+[Joe Scotto's YouTube Channel](https://www.youtube.com/joescotto)
