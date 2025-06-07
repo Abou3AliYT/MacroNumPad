@@ -9,8 +9,6 @@ Following the guides provided by the individuals I mentioned earlier, I first ma
 
 ![[Screenshot_232.png]]
 
-https://prnt.sc/HoslPENNEuH7 
-
 For this part I highly recommend referring to ai03's guide on how to properly wire an ATmega32u4 to it's respective components, but the picture below shows how it is generally meant to be wired. I will also mention that when wiring any MCU, it is also highly recommend to refer to the original data sheet containing the proper information on how and what to wire to the respective MCU. 
 
 ![[Screenshot_233 1.png]]
