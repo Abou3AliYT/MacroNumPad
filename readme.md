@@ -11,16 +11,15 @@ Following the guides provided by the individuals I mentioned earlier, I first ma
 
 For this part I highly recommend referring to ai03's guide on how to properly wire an ATmega32u4 to it's respective components, but the picture below shows how it is generally meant to be wired. I will also mention that when wiring any MCU, it is also highly recommend to refer to the original data sheet containing the proper information on how and what to wire to the respective MCU. 
 
-![[Screenshot_233 1.png]]
+![Image](https://github.com/user-attachments/assets/d8fc2e3b-52d4-4e2b-ada3-47634ec0b649)
 ## Part II - The PCB 
 
 Here is some of the worst wiring possible for the MCU, here is a picture below:
 
-![Image](https://github.com/user-attachments/assets/d8fc2e3b-52d4-4e2b-ada3-47634ec0b649)
+![Image](https://github.com/user-attachments/assets/e5bf6e9c-4bfb-45ed-a47e-af356c0e671d)
 
 Organization is a very important skill when in comes to wiring the PCB, and when it comes to circuitry involved with MCUs and small components such as this, it requires wiring from, to and back to the original component, meaning that there is an order of components to be wired first with constant consideration of keeping sufficient space for the pinout of all the other components and the MCU pinouts. 
 
-![Image](https://github.com/user-attachments/assets/e5bf6e9c-4bfb-45ed-a47e-af356c0e671d)
 
 ## Provided Guides And References
 
